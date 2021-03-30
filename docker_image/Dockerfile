@@ -1,3 +1,5 @@
+# 需将编译好的tendisplus拷至tendis-2.2.2/bin/目录
+
 FROM docker.91act.com:5000/centos:latest
 LABEL maintainer "liaobinhong@91act.com"
 USER root
