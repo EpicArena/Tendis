@@ -1,0 +1,32 @@
+version: '3.1'
+
+services:
+  tendisplus:
+    # image: docker.91act.com:5000/tendis:v1.0
+    image: docker.91act.com:5000/tendis:v2.2.2
+    # image: docker.91act.com:5000/tencentdbforkv/tendisplus:v2.2.2
+    container_name: tendis
+    ports:
+      - "51002:51002"
+    extra_hosts:
+      dockerhost: 172.17.0.1
+    volumes:
+      # - "../../dbsave/tredis/:/data1/tendis/51002"
+      - "./dbsave/:/data1/tendis/51002"
+    restart: always
+    # restart: on-failure:3
+    privileged: 'true'
+    stdin_open: true
+    tty: true
+    logging:
+      driver: json-file
+      options: 
+        max-size: "8192k"
+        max-file: "10"
+    # networks:
+    #   tendisplus-net:
+    #     ipv4_address: 192.168.98.10
+    # environment:
+    #   - REDIS_PASSWORD=tendisplustest
+    #   - CLUSTER=yes
+    
