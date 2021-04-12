@@ -40,7 +40,7 @@ services:
       tendisplus-net:
         ipv4_address: 192.168.98.11
     environment:
-      - REDIS_PASSWORD=tendisplustest
+      # - REDIS_PASSWORD=tendisplustest
       - CLUSTER=yes
     volumes:
       - "/data/tmp/tendisplus/30001:/data1/tendis/51002"
@@ -55,7 +55,7 @@ services:
       tendisplus-net:
         ipv4_address: 192.168.98.21
     environment:
-      - REDIS_PASSWORD=tendisplustest
+      # - REDIS_PASSWORD=tendisplustest
       - CLUSTER=yes
     volumes:
       - "/data/tmp/tendisplus/50001:/data1/tendis/51002"
@@ -107,7 +107,7 @@ services:
     environment:
       # - PASSWORD=tendisplustest
       - IP=192.168.98
-      - SIZE=3
+      - SIZE=2
     restart: on-failure:3
 
 networks:

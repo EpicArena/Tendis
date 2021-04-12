@@ -13,5 +13,7 @@ WORKDIR /data1/
 
 COPY build /data1/build/
 
+ENV PASSWORD=
+
 CMD ["/bin/sh", "-c", "cd /data1/build && ./build.sh"]
 
